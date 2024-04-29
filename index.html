@@ -1,0 +1,146 @@
+<html>
+    <head>
+        <title>Winds</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
+        <style>
+            body {
+                overflow: hidden;
+                margin: 0;
+                padding: 0;
+                user-select: none;
+                background-image: url('GreenPixel.jpg');
+                height: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            #WindsTitle {
+                align-content: center;
+                text-align: center;
+                margin-top: 0.5vh;
+                font-size: 4vw; 
+                margin-bottom: 0;
+                padding-bottom: 0;
+                margin-left: auto; 
+                margin-right: auto;
+            }
+            img {
+                margin: 0 auto;
+                padding: 0;
+                display: block;
+                max-width: 50%;
+                height: auto;
+                align-content: center;
+            }
+            #highscore {
+                text-align: center;
+                font-size: 2vw;
+                margin: 0;
+                padding: 0;
+                font-weight: bold;
+                font-family: 'Jersey 25';
+            }
+            #lastscore {
+                text-align: center;
+                font-size: 2vw;
+                margin: 0;
+                padding: 1vh 0 0;
+                font-weight: bold;
+                font-family: 'Jersey 25';
+            }
+            #textss {
+                text-align: center;
+                font-size: 2vw;
+                margin-top: 0;
+                padding: 1vh 0 0;
+                font-weight: bold;
+                font-family: 'Jersey 25';
+            }
+            #Buttonss {
+                text-align: center;
+                margin-top: 7vh;
+                /* display: flex;
+                justify-content: center; */
+            }
+           
+            #SSSS {
+                margin: -50 0 0;
+                padding: 2vh;
+                background-color: rgba(0, 128, 0, 0.2);
+                display: inline-block;
+                border-radius: 15px;
+            }
+            .button {
+                display: block;
+                background-color: #2b6188;
+                border: none;
+                color: white;
+                text-align: center;
+                font-size: 3vw;
+                padding: 2vh 5vw;
+                margin: 3vh auto;
+                cursor: pointer;
+                border-radius: 10px;
+                text-decoration: none;
+            }
+            .button:hover {
+                background-color: #0a315c;
+            }
+            
+        </style>
+    </head>
+
+    <body>
+        <div id="WindsTitle">
+            <img src="WindsTitle5.png">
+            <div id="SSSS">
+                <p id="highscore"></p>
+                <p id="lastscore"></p>
+                <p id="textss"></p>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div id="Buttonss">
+            <button class="button" onclick="Play()">Play</button>
+            <button class="button" onclick="Tutorial()">Tutorial</button>
+        </div>
+        
+        <script>
+            function preload() {
+                LobbyMusic = loadSound('weeknds.mp3')
+            }
+            function setup() {
+                LobbyMusic.loop()
+            }
+            // getting the scores 
+            let highestScore = localStorage.getItem("HighestScore")
+            let lastScore = localStorage.getItem("LastScore")
+            
+            if (highestScore) {
+                document.getElementById("highscore").innerText = "Highest Score: " + highestScore
+            } 
+            else {
+                document.getElementById("highscore").innerText = "No high score yet."
+            }
+            if (lastScore) {
+                document.getElementById("lastscore").innerText = "Score: " + lastScore
+            } 
+            else {
+                document.getElementById("lastscore").innerText = "No Last Score"
+            }
+            if (lastScore === highestScore) {
+                document.getElementById("textss").innerText = "! NEW HIGH SCORE !"
+            } 
+
+            function Play() {
+                window.location.href='Winds.html'
+            }
+            function Tutorial() {
+                window.location.href='Tutorial.html'
+            }
+        </script>
+    </body>
+</html>
