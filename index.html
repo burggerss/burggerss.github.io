@@ -131,7 +131,7 @@
             else {
                 document.getElementById("lastscore").innerText = "No Last Score"
             }
-            if (lastScore === highestScore) {
+            if (lastScore === highestScore && (lastScore || highestScore != null)) {
                 document.getElementById("textss").innerText = "! NEW HIGH SCORE !"
             } 
 

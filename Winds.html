@@ -9,6 +9,7 @@
   <title>WINDIER</title>
 </head>
 <style>
+  
   body {
     user-select: none;
     margin: 0;
@@ -87,7 +88,7 @@
       }
 
     display() {
-        fill(255, 0, 255)  // pink color for objects
+        fill(34, 103, 214)  // pink color for objects
         ellipse(this.x, this.y, this.size, this.size) 
         }
     }
@@ -120,9 +121,9 @@
       // }
       
       if (!CPSound || !CPSound.isPlaying()) { // Check for soudn
-        let RTrack = Math.ceil(random(SoundList.length))
+        let RTrack = Math.floor(random(SoundList.length))
         console.log(RTrack)
-        CPSound = loadSound(SoundList[RTrack], CPPPP)
+        CPSound = loadSound(SoundList[RTrack],CPPPP)
         
         function CPPPP() { // Load and play the selected sound
           CPSound.play()
@@ -210,11 +211,11 @@
     }
 
     function drawo() {
-      fill(255,0,255)
+      fill(34, 103, 214)
       circle(pppp.x, pppp.y, pppp.w)
-      fill(255,0,255)
+      fill(34, 103, 214)
       circle(llll.x, llll.y, llll.w)
-      fill(255,0,255)
+      fill(34, 103, 214)
       circle(mmmm.x, mmmm.y, mmmm.w)
       
     }
