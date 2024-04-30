@@ -37,6 +37,7 @@
 </style>
 <body>
   <script>
+    // localStorage.clear()
     let w = window.innerWidth
     let h = window.innerHeight
     let x 
@@ -75,7 +76,7 @@
     }
 
     DotLocation() {
-        let minDistance = 100 //Distance that the dot can spawn from player
+        let minDistance = 75 //Distance that the dot can spawn from player
         let validPosition = false 
         while (!validPosition) {
           this.x = random(width) 
